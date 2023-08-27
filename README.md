@@ -33,28 +33,6 @@ python lane_map.py
 
 ## Customizing Excel Parameters
 
-The Lane Visualizer script is designed to work with Excel files containing lane data. 
-To customize the script for your specific use case, follow these steps:
-
-1. Open the `lane_map.py` file in a code or text editor.
-
-2. Locate the `LaneMap` class's constructor (`__init__` method).
-3. In this method, you'll find code that loads data from the Excel file:
-
-```python
-self.wb = openpyxl.load_workbook(filename='test_data4.xlsx')
-self.sheet = self.wb.active
-
-# Extract relevant columns from the sheet
-self.loaded_col = self.sheet['D'][1:]
-self.origin_city_col = self.sheet['E'][1:]
-self.origin_state_col = self.sheet['F'][1:]
-self.dest_city_col = self.sheet['G'][1:]
-self.dest_state_col = self.sheet['H'][1:]
-```
-
-## Customizing Excel Parameters
-
 The LaneMap Visualizer script is designed to work with Excel files containing lane data. 
 To customize the script for your specific use case, follow these steps:
 
