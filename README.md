@@ -1,6 +1,7 @@
 # Lane Visualizer
 
-The Lane Visualizer is a Python script that reads data from an Excel file containing information about loaded lanes, geolocates the cities involved, and creates an interactive map visualizing the lanes and their traffic.
+The Lane Visualizer is a Python script that reads data from an Excel file containing information about loaded lanes, 
+geolocates the cities involved, and creates an interactive map visualizing the lanes and their traffic.
 
 ## Features
 
@@ -32,11 +33,13 @@ python lane_map.py
 
 ## Customizing Excel Parameters
 
-The Lane Visualizer script is designed to work with Excel files containing lane data. To customize the script for your specific use case, follow these steps:
+The Lane Visualizer script is designed to work with Excel files containing lane data. 
+To customize the script for your specific use case, follow these steps:
 
 1. Open the `lane_map.py` file in a code or text editor.
 
-2. Locate the `LaneMap` class's constructor (`__init__` method). In this method, you'll find code that loads data from the Excel file:
+2. Locate the `LaneMap` class's constructor (`__init__` method).
+3. In this method, you'll find code that loads data from the Excel file:
 
 ```python
 self.wb = openpyxl.load_workbook(filename='test_data4.xlsx')
@@ -49,18 +52,16 @@ self.origin_state_col = self.sheet['F'][1:]
 self.dest_city_col = self.sheet['G'][1:]
 self.dest_state_col = self.sheet['H'][1:]
 ```
-
-Certainly, here's a snippet you can add to the README.md file to guide users on customizing the Excel parameters for their specific use case:
-
-markdown
 
 ## Customizing Excel Parameters
 
-The LaneMap Visualizer script is designed to work with Excel files containing lane data. To customize the script for your specific use case, follow these steps:
+The LaneMap Visualizer script is designed to work with Excel files containing lane data. 
+To customize the script for your specific use case, follow these steps:
 
 1. Open the `lane_map.py` file in a text editor.
 
-2. Locate the `LaneMap` class's constructor (`__init__` method). In this method, you'll find code that loads data from the Excel file:
+2. Locate the `LaneMap` class's constructor (`__init__` method).
+In this method, you'll find code that loads data from the Excel file:
 
 ```python
 self.wb = openpyxl.load_workbook(filename='test_data4.xlsx')
@@ -74,7 +75,8 @@ self.dest_city_col = self.sheet['G'][1:]
 self.dest_state_col = self.sheet['H'][1:]
 ```
 
-3. Replace 'test_data4.xlsx' with the path to your Excel file. Make sure your Excel file follows a similar structure with columns for loaded status, origin city, origin state, destination city, and destination state.
+3. Replace 'test_data4.xlsx' with the path to your Excel file.
+Make sure your Excel file follows a similar structure with columns for loaded status, origin city, origin state, destination city, and destination state.
 
 4. Adjust the column indices in the above code if your Excel file has a different structure. For example, if your "Loaded" status is in column C, update 'D' to 'C'.
 
@@ -94,10 +96,12 @@ This will ensure that the script correctly reads and processes your Excel data t
 
 ```python
 # Add HeatMap layer
-        folium.plugins.HeatMap(heat_data, radius=35, blur=35, min_opacity=0.3).add_to(lanemap)
+folium.plugins.HeatMap(heat_data, radius=35, blur=35, min_opacity=0.3).add_to(lanemap)
 ```
 
 2. Modify the num_segments calculation to change the level of detail in the lane segments on the map.
+Since a normal heat map uses points to visualize data, this code creates segments of data between the
+origin and destination to visualize the frequency of the lane. Adjust as needed.
 
 ```python
     def plot_map(self):
