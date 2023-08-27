@@ -3,7 +3,7 @@
 The Lane Visualizer is a Python script that reads data from an Excel file containing information about loaded lanes, 
 geolocates the cities involved, and creates an interactive map visualizing the lanes and their traffic.
 
-![Sample Screenshot](https://github.com/spencerjulius/lane_visualizer/blob/main/sample.png)
+<iframe src="https://drive.google.com/file/d/19ukbAPzOAJZ3y8zYredZZKnSd4Gr6X23/preview" width="640" height="480" allow="autoplay"></iframe>
 
 ## Features
 
